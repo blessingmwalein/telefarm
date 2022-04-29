@@ -44,28 +44,28 @@ Route::middleware(['auth:sanctum'])->group(function () {
     // })->name('dashboard');
     //shop routes\
     Route::middleware(['has_shop'])->group(function () {
-        Route::post('/shop/CategoryResourcecreate', [ShopController::class, 'store']);
         Route::get('/vendor-register',  [ShopController::class, 'getShopRegister'])->name('vendor-register');
         Route::get('/shop/waiting',  [ShopController::class, 'shopWaiting'])->name('shop-waiting');
-
         Route::get('/shop/dashboad', [ShopController::class, 'index']);
         Route::get('/shop/dashboad/sales', [ShopController::class, 'sales']);
-
-        Route::get('/shop/create/product', [ProductController::class, 'create']);
-        Route::post('/shop/create/product', [ProductController::class, 'store']);
         Route::post('/shop/create', [ShopController::class, 'store']);
+
+        //shop products
+        Route::get('/shop/products/create', [ProductController::class, 'create']);
+        Route::post('/shop/products/create', [ProductController::class, 'store']);
         Route::get('/shop/products', [ProductController::class, 'index']);
-        Route::get('/shop/edit/product/{product}', [ProductController::class, 'edit']);
-        Route::post('/shop/edit/product/{product}', [ProductController::class, 'update']);
+        Route::get('/shop/products/edit/{product}', [ProductController::class, 'edit']);
+        Route::get('/shop/products/{product}', [ProductController::class, 'viewShopProduct']);
+        Route::post('/shop/products/edit/{product}', [ProductController::class, 'update']);
+
+        //shop settings
         Route::get('/shop/general/settings', [ShopController::class, 'showShopSettings']);
         Route::get('/shop/billing/settings', [ShopController::class, 'showShopMembership']);
     });
     Route::get('/shop/pending',  [ShopController::class, 'shopPending'])->name('shop-pending');
 
 
-
     Route::get('/products/checkout', [ProductController::class, 'checkout']);
-
     Route::get('/order/payment/{order}', [CheckoutController::class, 'payment']);
     Route::get('/shop/payment/{shop}', [ShopController::class, 'payment']);
 

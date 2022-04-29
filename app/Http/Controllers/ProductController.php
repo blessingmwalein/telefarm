@@ -28,7 +28,7 @@ class ProductController extends Controller
     {
         Inertia::setRootView('user');
 
-        return Inertia::render('Shop/Prodcts/Index', [
+        return Inertia::render('Shop/Products/Index', [
             'products' => ProductResource::collection(Auth::user()->shop->first()->products),
         ]);
     }
@@ -40,9 +40,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        Inertia::setRootView('shopadmin');
+        Inertia::setRootView('user');
 
-        return Inertia::render('ShopDashboard/CreateNewProduct', [
+        return Inertia::render('Shop/Products/Create', [
             'sub_categories' => SubCategory::all(),
             'colors' => Color::all(),
             'sizes' => Size::all()
@@ -95,6 +95,18 @@ class ProductController extends Controller
         ]);
     }
 
+    public function viewShopProduct(Product $product)
+    {
+        return Inertia::render('Shop/Products/_Id', [
+            'product' => new ProductResource($product),
+            'colors' => Color::all(),
+            'sizes' => Size::all(),
+            'r_products' => ProductResource::collection(Product::all()->take(6))
+        ]);
+    }
+
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -105,9 +117,9 @@ class ProductController extends Controller
     {
 
 
-        Inertia::setRootView('shopadmin');
+        Inertia::setRootView('user');
 
-        return Inertia::render('ShopDashboard/EditShopProduct', [
+        return Inertia::render('Shop/Products/_Edit', [
             'product_prop' => new ProductResource($product),
             'category' => SubCategory::where('id', '=', $product->sub_category_id)->first(),
             'colors' => Color::all(),
