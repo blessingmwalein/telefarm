@@ -32,12 +32,12 @@ class ShopController extends Controller
         ]);
     }
 
-    public function showShopSettings()
+    public function settings()
     {
-        Inertia::setRootView('shopadmin');
+        Inertia::setRootView('user');
 
-        return Inertia::render('ShopDashboard/GeneralSettings', [
-            'shop' => new ShopResource(Auth::user()->shop[0])
+        return Inertia::render('Shop/Settings', [
+            'shop' => new ShopResource(Auth::user()->shop->first())
         ]);
     }
 
@@ -78,6 +78,12 @@ class ShopController extends Controller
             'shop' => new ShopResource($shop),
             'sales' => SaleResource::collection(Sale::where('shop_id', '=', $shop->id)->get())
         ]);
+    }
+    public function showShopOrder()
+    {
+        Inertia::setRootView('user');
+
+        return Inertia::render('Shop/Orders/_Id');
     }
 
     /**

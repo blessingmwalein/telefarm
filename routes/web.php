@@ -52,6 +52,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
         //shop orders and sales
         Route::get('/shop/orders', [ShopController::class, 'orders']);
+        Route::get('/shop/orders/{order}', [ShopController::class, 'showShopOrder']);
 
         //shop products
         Route::get('/shop/products/create', [ProductController::class, 'create']);
@@ -62,7 +63,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::post('/shop/products/edit/{product}', [ProductController::class, 'update']);
 
         //shop settings
-        Route::get('/shop/general/settings', [ShopController::class, 'showShopSettings']);
+        Route::get('/shop/settings', [ShopController::class, 'settings']);
         Route::get('/shop/billing/settings', [ShopController::class, 'showShopMembership']);
     });
     Route::get('/shop/pending',  [ShopController::class, 'shopPending'])->name('shop-pending');

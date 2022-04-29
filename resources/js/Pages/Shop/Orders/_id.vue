@@ -1,937 +1,253 @@
 <template>
     <shop-layout :title="'Order Details'">
         <div class="container-fluid py-4">
-            <div class="d-sm-flex justify-content-between">
-                <div>
-                    <a
-                        href="javascript:;"
-                        class="btn btn-icon bg-gradient-primary"
-                    >
-                        New order
-                    </a>
-                </div>
-                <div class="d-flex">
-                    <div class="dropdown d-inline">
-                        <a
-                            href="javascript:;"
-                            class="btn btn-outline-dark dropdown-toggle"
-                            data-bs-toggle="dropdown"
-                            id="navbarDropdownMenuLink2"
-                            aria-expanded="false"
-                        >
-                            Filters
-                        </a>
-                        <ul
-                            class="dropdown-menu dropdown-menu-lg-start px-2 py-3"
-                            aria-labelledby="navbarDropdownMenuLink2"
-                            style=""
-                        >
-                            <li>
-                                <a
-                                    class="dropdown-item border-radius-md"
-                                    href="javascript:;"
-                                    >Status: Paid</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    class="dropdown-item border-radius-md"
-                                    href="javascript:;"
-                                    >Status: Refunded</a
-                                >
-                            </li>
-                            <li>
-                                <a
-                                    class="dropdown-item border-radius-md"
-                                    href="javascript:;"
-                                    >Status: Canceled</a
-                                >
-                            </li>
-                            <li>
-                                <hr class="horizontal dark my-2" />
-                            </li>
-                            <li>
-                                <a
-                                    class="dropdown-item border-radius-md text-danger"
-                                    href="javascript:;"
-                                    >Remove Filter</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                    <button
-                        class="btn btn-icon btn-outline-dark ms-2 export"
-                        data-type="csv"
-                        type="button"
-                    >
-                        <span class="btn-inner--icon"
-                            ><i class="ni ni-archive-2"></i
-                        ></span>
-                        <span class="btn-inner--text">Export CSV</span>
-                    </button>
-                </div>
-            </div>
             <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="table-responsive">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card mb-4">
+                        <div class="card-header p-3 pb-0">
                             <div
-                                class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns"
+                                class="d-flex justify-content-between align-items-center"
                             >
-                                <div class="dataTable-top">
-                                    <div class="dataTable-search">
-                                        <input
-                                            class="dataTable-input"
-                                            placeholder="Search..."
-                                            type="text"
-                                        />
+                                <div>
+                                    <h6>Order Details</h6>
+                                    <p class="text-sm mb-0">
+                                        Order no. <b>241342</b> from
+                                        <b>23.02.2021</b>
+                                    </p>
+                                    <p class="text-sm">Code: <b>KF332</b></p>
+                                </div>
+                                <a
+                                    href="javascript:;"
+                                    class="btn bg-gradient-secondary ms-auto mb-0"
+                                    >Invoice</a
+                                >
+                            </div>
+                        </div>
+                        <div class="card-body p-3 pt-0">
+                            <hr class="horizontal dark mt-0 mb-4" />
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="d-flex">
+                                        <div>
+                                            <img
+                                                src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1400&amp;q=80"
+                                                class="avatar avatar-xxl me-3"
+                                                alt="product image"
+                                            />
+                                        </div>
+                                        <div>
+                                            <h6 class="text-lg mb-0 mt-2">
+                                                Gold Glasses
+                                            </h6>
+                                            <p class="text-sm mb-3">
+                                                Order was delivered 2 days ago.
+                                            </p>
+                                            <span
+                                                class="badge badge-sm bg-gradient-success"
+                                                >Delivered</span
+                                            >
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="dataTable-container">
-                                    <table
-                                        class="table table-flush dataTable-table"
-                                        id="datatable-search"
+                                <div
+                                    class="col-lg-6 col-md-6 col-12 my-auto text-end"
+                                >
+                                    <a
+                                        href="javascript:;"
+                                        class="btn bg-gradient-info mb-0"
+                                        >Contact Us</a
                                     >
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th
-                                                    data-sortable=""
-                                                    style="width: 14.7281%"
-                                                >
-                                                    <a
-                                                        href="#"
-                                                        class="dataTable-sorter"
-                                                        >Id</a
-                                                    >
-                                                </th>
-                                                <th
-                                                    data-sortable=""
-                                                    style="width: 16.3897%"
-                                                >
-                                                    <a
-                                                        href="#"
-                                                        class="dataTable-sorter"
-                                                        >Date</a
-                                                    >
-                                                </th>
-                                                <th
-                                                    data-sortable=""
-                                                    style="width: 16.0876%"
-                                                >
-                                                    <a
-                                                        href="#"
-                                                        class="dataTable-sorter"
-                                                        >Status</a
-                                                    >
-                                                </th>
-                                                <th
-                                                    data-sortable=""
-                                                    style="width: 19.6375%"
-                                                >
-                                                    <a
-                                                        href="#"
-                                                        class="dataTable-sorter"
-                                                        >Customer</a
-                                                    >
-                                                </th>
-                                                <th
-                                                    data-sortable=""
-                                                    style="width: 22.3565%"
-                                                >
-                                                    <a
-                                                        href="#"
-                                                        class="dataTable-sorter"
-                                                        >Product</a
-                                                    >
-                                                </th>
-                                                <th
-                                                    data-sortable=""
-                                                    style="width: 10.8006%"
-                                                >
-                                                    <a
-                                                        href="#"
-                                                        class="dataTable-sorter"
-                                                        >Revenue</a
-                                                    >
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="checkbox"
-                                                                id="customCheck1"
-                                                            />
-                                                        </div>
-                                                        <p
-                                                            class="text-xs font-weight-bold ms-2 mb-0"
-                                                        >
-                                                            #10421
-                                                        </p>
-                                                    </div>
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >1 Nov, 10:20 AM</span
-                                                    >
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <button
-                                                            class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
-                                                        >
-                                                            <i
-                                                                class="fas fa-check"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
-                                                        <span>Paid</span>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <img
-                                                            src="/user-assets/img/team-2.jpg"
-                                                            class="avatar avatar-xs me-2"
-                                                            alt="user image"
-                                                        />
-                                                        <span
-                                                            >Orlando
-                                                            Imieto</span
-                                                        >
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs"
-                                                        >Nike Sport V2</span
-                                                    >
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs"
-                                                        >$140,20</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div
-                                                            class="form-check pt-0"
-                                                        >
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="checkbox"
-                                                                id="customCheck2"
-                                                            />
-                                                        </div>
-                                                        <p
-                                                            class="text-xs font-weight-bold ms-2 mb-0"
-                                                        >
-                                                            #10422
-                                                        </p>
-                                                    </div>
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >1 Nov, 10:53 AM</span
-                                                    >
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <button
-                                                            class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
-                                                        >
-                                                            <i
-                                                                class="fas fa-check"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
-                                                        <span>Paid</span>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <img
-                                                            src="/user-assets/img/team-1.jpg"
-                                                            class="avatar avatar-xs me-2"
-                                                            alt="user image"
-                                                        />
-                                                        <span
-                                                            >Alice Murinho</span
-                                                        >
-                                                    </div>
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >Valvet T-shirt</span
-                                                    >
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >$42,00</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="checkbox"
-                                                                id="customCheck3"
-                                                            />
-                                                        </div>
-                                                        <p
-                                                            class="text-xs font-weight-bold ms-2 mb-0"
-                                                        >
-                                                            #10423
-                                                        </p>
-                                                    </div>
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >1 Nov, 11:13 AM</span
-                                                    >
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <button
-                                                            class="btn btn-icon-only btn-rounded btn-outline-dark mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
-                                                        >
-                                                            <i
-                                                                class="fas fa-undo"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
-                                                        <span>Refunded</span>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div
-                                                            class="avatar avatar-xs me-2 bg-gradient-dark"
-                                                        >
-                                                            <span>M</span>
-                                                        </div>
-                                                        <span
-                                                            >Michael Mirra</span
-                                                        >
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs">
-                                                        Leather Wallet
-                                                        <span
-                                                            class="text-secondary ms-2"
-                                                        >
-                                                            +1 more
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs"
-                                                        >$25,50</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="checkbox"
-                                                                id="customCheck4"
-                                                            />
-                                                        </div>
-                                                        <p
-                                                            class="text-xs font-weight-bold ms-2 mb-0"
-                                                        >
-                                                            #10424
-                                                        </p>
-                                                    </div>
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >1 Nov, 12:20 PM</span
-                                                    >
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <button
-                                                            class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
-                                                        >
-                                                            <i
-                                                                class="fas fa-check"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
-                                                        <span>Paid</span>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div
-                                                            class="d-flex align-items-center"
-                                                        >
-                                                            <img
-                                                                src="/user-assets/img/team-3.jpg"
-                                                                class="avatar avatar-xs me-2"
-                                                                alt="user image"
-                                                            />
-                                                            <span
-                                                                >Andrew
-                                                                Nichel</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs">
-                                                        Bracelet Onu-Lino
-                                                    </span>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs"
-                                                        >$19,40</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="checkbox"
-                                                                id="customCheck5"
-                                                            />
-                                                        </div>
-                                                        <p
-                                                            class="text-xs font-weight-bold ms-2 mb-0"
-                                                        >
-                                                            #10425
-                                                        </p>
-                                                    </div>
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >1 Nov, 1:40 PM</span
-                                                    >
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <button
-                                                            class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
-                                                        >
-                                                            <i
-                                                                class="fas fa-times"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
-                                                        <span>Canceled</span>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div
-                                                            class="d-flex align-items-center"
-                                                        >
-                                                            <img
-                                                                src="/user-assets/img/team-4.jpg"
-                                                                class="avatar avatar-xs me-2"
-                                                                alt="user image"
-                                                            />
-                                                            <span
-                                                                >Sebastian
-                                                                Koga</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs">
-                                                        Phone Case Pink
-                                                        <span
-                                                            class="text-secondary ms-2"
-                                                        >
-                                                            x 2
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs"
-                                                        >$44,90</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="checkbox"
-                                                                id="customCheck6"
-                                                            />
-                                                        </div>
-                                                        <p
-                                                            class="text-xs font-weight-bold ms-2 mb-0"
-                                                        >
-                                                            #10426
-                                                        </p>
-                                                    </div>
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >1 Nov, 2:19 AM</span
-                                                    >
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <button
-                                                            class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
-                                                        >
-                                                            <i
-                                                                class="fas fa-check"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
-                                                        <span>Paid</span>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div
-                                                            class="avatar avatar-xs me-2 bg-gradient-primary"
-                                                        >
-                                                            <span>L</span>
-                                                        </div>
-                                                        <span
-                                                            >Laur Gilbert</span
-                                                        >
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs">
-                                                        Backpack Niver
-                                                    </span>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs"
-                                                        >$112,50</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="checkbox"
-                                                                id="customCheck7"
-                                                            />
-                                                        </div>
-                                                        <p
-                                                            class="text-xs font-weight-bold ms-2 mb-0"
-                                                        >
-                                                            #10427
-                                                        </p>
-                                                    </div>
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >1 Nov, 3:42 AM</span
-                                                    >
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <button
-                                                            class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
-                                                        >
-                                                            <i
-                                                                class="fas fa-check"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
-                                                        <span>Paid</span>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div
-                                                            class="avatar avatar-xs me-2 bg-gradient-dark"
-                                                        >
-                                                            <span>I</span>
-                                                        </div>
-                                                        <span>Iryna Innda</span>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs">
-                                                        Adidas Vio
-                                                    </span>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs"
-                                                        >$200,00</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="checkbox"
-                                                                id="customCheck8"
-                                                            />
-                                                        </div>
-                                                        <p
-                                                            class="text-xs font-weight-bold ms-2 mb-0"
-                                                        >
-                                                            #10428
-                                                        </p>
-                                                    </div>
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >2 Nov, 9:32 AM</span
-                                                    >
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <button
-                                                            class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
-                                                        >
-                                                            <i
-                                                                class="fas fa-check"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
-                                                        <span>Paid</span>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div
-                                                            class="avatar avatar-xs me-2 bg-gradient-dark"
-                                                        >
-                                                            <span>A</span>
-                                                        </div>
-                                                        <span
-                                                            >Arrias Liunda</span
-                                                        >
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs">
-                                                        Airpods 2 Gen
-                                                    </span>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs"
-                                                        >$350,00</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="checkbox"
-                                                                id="customCheck9"
-                                                            />
-                                                        </div>
-                                                        <p
-                                                            class="text-xs font-weight-bold ms-2 mb-0"
-                                                        >
-                                                            #10429
-                                                        </p>
-                                                    </div>
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >2 Nov, 10:14 AM</span
-                                                    >
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <button
-                                                            class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
-                                                        >
-                                                            <i
-                                                                class="fas fa-check"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
-                                                        <span>Paid</span>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div
-                                                            class="d-flex align-items-center"
-                                                        >
-                                                            <img
-                                                                src="/user-assets/img/team-5.jpg"
-                                                                class="avatar avatar-xs me-2"
-                                                                alt="user image"
-                                                            />
-                                                            <span
-                                                                >Rugna
-                                                                Ilpio</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs">
-                                                        Bracelet Warret
-                                                    </span>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs"
-                                                        >$15,00</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="checkbox"
-                                                                id="customCheck10"
-                                                            />
-                                                        </div>
-                                                        <p
-                                                            class="text-xs font-weight-bold ms-2 mb-0"
-                                                        >
-                                                            #10430
-                                                        </p>
-                                                    </div>
-                                                </td>
-                                                <td class="font-weight-bold">
-                                                    <span class="my-2 text-xs"
-                                                        >2 Nov, 12:56 PM</span
-                                                    >
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <button
-                                                            class="btn btn-icon-only btn-rounded btn-outline-dark mb-0 me-2 btn-sm d-flex align-items-center justify-content-center"
-                                                        >
-                                                            <i
-                                                                class="fas fa-undo"
-                                                                aria-hidden="true"
-                                                            ></i>
-                                                        </button>
-                                                        <span>Refunded</span>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <div
-                                                        class="d-flex align-items-center"
-                                                    >
-                                                        <div
-                                                            class="d-flex align-items-center"
-                                                        >
-                                                            <img
-                                                                src="/user-assets/img/ivana-squares.jpg"
-                                                                class="avatar avatar-xs me-2"
-                                                                alt="user image"
-                                                            />
-                                                            <span
-                                                                >Anna
-                                                                Landa</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs">
-                                                        Watter Bottle India
-                                                        <span
-                                                            class="text-secondary ms-2"
-                                                        >
-                                                            x 3
-                                                        </span>
-                                                    </span>
-                                                </td>
-                                                <td
-                                                    class="text-xs font-weight-bold"
-                                                >
-                                                    <span class="my-2 text-xs"
-                                                        >$25,00</span
-                                                    >
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <p class="text-sm mt-2 mb-0">
+                                        Do you like the product? Leave us a
+                                        review <a href="javascript:;">here</a>.
+                                    </p>
                                 </div>
-                                <div class="dataTable-bottom">
-                                    <div class="dataTable-info">
-                                        Showing 1 to 10 of 12 entries
+                            </div>
+                            <hr class="horizontal dark mt-4 mb-4" />
+                            <div class="row">
+                                <div class="col-lg-3 col-md-6 col-12">
+                                    <h6 class="mb-3">Track order</h6>
+                                    <div class="timeline timeline-one-side">
+                                        <div class="timeline-block mb-3">
+                                            <span class="timeline-step">
+                                                <i
+                                                    class="ni ni-bell-55 text-secondary"
+                                                ></i>
+                                            </span>
+                                            <div class="timeline-content">
+                                                <h6
+                                                    class="text-dark text-sm font-weight-bold mb-0"
+                                                >
+                                                    Order received
+                                                </h6>
+                                                <p
+                                                    class="text-secondary font-weight-bold text-xs mt-1 mb-0"
+                                                >
+                                                    22 DEC 7:20 AM
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-block mb-3">
+                                            <span class="timeline-step">
+                                                <i
+                                                    class="ni ni-html5 text-secondary"
+                                                ></i>
+                                            </span>
+                                            <div class="timeline-content">
+                                                <h6
+                                                    class="text-dark text-sm font-weight-bold mb-0"
+                                                >
+                                                    Generate order id #1832412
+                                                </h6>
+                                                <p
+                                                    class="text-secondary font-weight-bold text-xs mt-1 mb-0"
+                                                >
+                                                    22 DEC 7:21 AM
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-block mb-3">
+                                            <span class="timeline-step">
+                                                <i
+                                                    class="ni ni-cart text-secondary"
+                                                ></i>
+                                            </span>
+                                            <div class="timeline-content">
+                                                <h6
+                                                    class="text-dark text-sm font-weight-bold mb-0"
+                                                >
+                                                    Order transmited to courier
+                                                </h6>
+                                                <p
+                                                    class="text-secondary font-weight-bold text-xs mt-1 mb-0"
+                                                >
+                                                    22 DEC 8:10 AM
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-block mb-3">
+                                            <span class="timeline-step">
+                                                <i
+                                                    class="ni ni-check-bold text-success text-gradient"
+                                                ></i>
+                                            </span>
+                                            <div class="timeline-content">
+                                                <h6
+                                                    class="text-dark text-sm font-weight-bold mb-0"
+                                                >
+                                                    Order delivered
+                                                </h6>
+                                                <p
+                                                    class="text-secondary font-weight-bold text-xs mt-1 mb-0"
+                                                >
+                                                    22 DEC 4:54 PM
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <nav class="dataTable-pagination">
-                                        <ul class="dataTable-pagination-list">
-                                            <li class="pager">
-                                                <a href="#" data-page="1">‹</a>
-                                            </li>
-                                            <li class="active">
-                                                <a href="#" data-page="1">1</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="#" data-page="2">2</a>
-                                            </li>
-                                            <li class="pager">
-                                                <a href="#" data-page="2">›</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                                </div>
+                                <div class="col-lg-5 col-md-6 col-12">
+                                    <h6 class="mb-3">Payment details</h6>
+                                    <div
+                                        class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row"
+                                    >
+                                        <img
+                                            class="w-10 me-3 mb-0"
+                                            data-cfsrc="../../../assets/img/logos/mastercard.png"
+                                            alt="logo"
+                                            src="https://demos.creative-tim.com/marketplace/soft-ui-dashboard-pro/assets/img/logos/mastercard.png"
+                                        />
+                                        <h6 class="mb-0">
+                                            ****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;7852
+                                        </h6>
+                                        <button
+                                            type="button"
+                                            class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom"
+                                            title=""
+                                            data-bs-original-title="We do not store card details"
+                                        >
+                                            <i
+                                                class="fas fa-info"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </button>
+                                    </div>
+                                    <h6 class="mb-3 mt-4">
+                                        Billing Information
+                                    </h6>
+                                    <ul class="list-group">
+                                        <li
+                                            class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg"
+                                        >
+                                            <div class="d-flex flex-column">
+                                                <h6 class="mb-3 text-sm">
+                                                    Oliver Liam
+                                                </h6>
+                                                <span class="mb-2 text-xs"
+                                                    >Company Name:
+                                                    <span
+                                                        class="text-dark font-weight-bold ms-2"
+                                                        >Viking Burrito</span
+                                                    ></span
+                                                >
+                                                <span class="mb-2 text-xs"
+                                                    >Email Address:
+                                                    <span
+                                                        class="text-dark ms-2 font-weight-bold"
+                                                        >oliver@burrito.com</span
+                                                    ></span
+                                                >
+                                                <span class="text-xs"
+                                                    >VAT Number:
+                                                    <span
+                                                        class="text-dark ms-2 font-weight-bold"
+                                                        >FRB1235476</span
+                                                    ></span
+                                                >
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3 col-12 ms-auto">
+                                    <h6 class="mb-3">Order Summary</h6>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="mb-2 text-sm">
+                                            Product Price:
+                                        </span>
+                                        <span
+                                            class="text-dark font-weight-bold ms-2"
+                                            >$90</span
+                                        >
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="mb-2 text-sm">
+                                            Delivery:
+                                        </span>
+                                        <span
+                                            class="text-dark ms-2 font-weight-bold"
+                                            >$14</span
+                                        >
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="text-sm"> Taxes: </span>
+                                        <span
+                                            class="text-dark ms-2 font-weight-bold"
+                                            >$1.95</span
+                                        >
+                                    </div>
+                                    <div
+                                        class="d-flex justify-content-between mt-4"
+                                    >
+                                        <span class="mb-2 text-lg">
+                                            Total:
+                                        </span>
+                                        <span
+                                            class="text-dark text-lg ms-2 font-weight-bold"
+                                            >$105.95</span
+                                        >
+                                    </div>
                                 </div>
                             </div>
                         </div>
