@@ -97,6 +97,8 @@ class ProductController extends Controller
 
     public function viewShopProduct(Product $product)
     {
+        Inertia::setRootView('user');
+
         return Inertia::render('Shop/Products/_Id', [
             'product' => new ProductResource($product),
             'colors' => Color::all(),

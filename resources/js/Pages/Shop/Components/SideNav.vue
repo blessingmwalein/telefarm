@@ -214,7 +214,7 @@
                                         <li class="nav-item">
                                             <a
                                                 class="nav-link"
-                                                href="/shop/Orders"
+                                                href="/shop/orders"
                                             >
                                                 <span
                                                     class="sidenav-mini-icon text-xs"

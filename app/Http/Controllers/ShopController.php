@@ -69,6 +69,17 @@ class ShopController extends Controller
         ]);
     }
 
+    public function orders()
+    {
+        Inertia::setRootView('user');
+
+        $shop = Auth::user()->shop[0];
+        return Inertia::render('Shop/Orders/Index', [
+            'shop' => new ShopResource($shop),
+            'sales' => SaleResource::collection(Sale::where('shop_id', '=', $shop->id)->get())
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -50,6 +50,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get('/shop/dashboad/sales', [ShopController::class, 'sales']);
         Route::post('/shop/create', [ShopController::class, 'store']);
 
+        //shop orders and sales
+        Route::get('/shop/orders', [ShopController::class, 'orders']);
+
         //shop products
         Route::get('/shop/products/create', [ProductController::class, 'create']);
         Route::post('/shop/products/create', [ProductController::class, 'store']);
